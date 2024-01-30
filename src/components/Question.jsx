@@ -28,8 +28,8 @@ export const Question = ({
 
             setTimeout(() => {
                 onSelectAnswer(answer);
-            }, 2000);
-        }, 1000);
+            }, 3000);
+        }, 2000);
     }
 
     let answerState = '';
@@ -51,7 +51,7 @@ export const Question = ({
             answers={questions[index].answers}
             selectedAnswer={answer.selectedAnswer}
             answerState={answerState}
-            onSelect={onSelectAnswer}
+            onSelect={handleSelectAnswer}
         />
     </div>
   )
