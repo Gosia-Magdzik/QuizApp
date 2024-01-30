@@ -3,7 +3,17 @@ import quizCompleted from '../assets/quiz-complete.png'
 import questions from '../questions';
 
 export const Summary = ({ userAnswers }) => {
+    const skippedAnswers = userAnswers.filter(answer => answer === null)
+    const correctAnswers = userAnswers.filter(
+        (answer, index) => answer === questions[index].answers[0])
 
+    const skippedAnswersShare = Math.round(
+        (skippedAnswers.length / userAnswers.length) * 100)
+
+    const correctAnswersShare = Math.round(
+        (correctAnswers.length / userAnswers.length) * 100)
+
+    const wrongAnswersShare = 100 - skippedAnswersShare - correctAnswers;
 
     return (
         <div id='summary'>
@@ -11,16 +21,16 @@ export const Summary = ({ userAnswers }) => {
             <h2>Quiz Completed</h2>
             <div id='summary-stats'>
                 <p>
-                    <span className='number'>10%</span>
+                    <span className='number'>{skippedAnswers}%</span>
                     <span className='number'>skipped</span>
                 </p>
                 <p>
-                    <span className='number'>10%</span>
+                    <span className='number'>{correctAnswersShare}%</span>
                     <span className='number'>answered correctly</span>
                 </p>
                 <p>
-                    <span className='number'>10%</span>
-                    <span className='number'>answered correctly</span>
+                    <span className='number'>{wrongAnswersShare}%</span>
+                    <span className='number'>answered incorrectly</span>
                 </p>
             </div>
             <ol>
