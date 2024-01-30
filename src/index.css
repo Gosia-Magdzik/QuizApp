@@ -53,6 +53,12 @@ header h1 {
   -webkit-text-fill-color: transparent;
 }
 
+@media screen and (max-width: 600px) {
+  header h1 {
+    font-size: 1rem;
+  }
+}
+
 #last-try {
   max-width: 40rem;
   margin: 2rem auto;
@@ -84,7 +90,6 @@ header h1 {
   padding: 2rem;
   background: linear-gradient(180deg, #3e2a60 0%, #321061 100%);
   border-radius: 8px;
-  /* box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.6); */
   box-shadow: 1px 1px 8px 4px rgba(12, 5, 32, 0.6);
   text-align: center;
 }
@@ -241,6 +246,12 @@ header h1 {
   color: #3a2353;
 }
 
+@media screen and (max-width: 600px) {
+  #summary h2 {
+    font-size: 2rem;
+  }
+}
+
 #summary ol {
   list-style: none;
   margin: 2rem auto;
@@ -294,6 +305,7 @@ header h1 {
 
 #summary-stats {
   display: flex;
+  flex-wrap: wrap;
   gap: 3rem;
   width: 60%;
   margin: 2rem auto;
@@ -312,6 +324,12 @@ header h1 {
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 3rem;
   color: #594276;
+}
+
+@media screen and (max-width: 600px) {
+  #summary-stats .number {
+    font-size: 2rem;
+  }
 }
 
 #summary-stats .text {
