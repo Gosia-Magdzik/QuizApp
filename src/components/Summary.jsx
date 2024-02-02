@@ -46,7 +46,7 @@ export const Summary = ({ userAnswers }) => {
                     }
 
                     return (
-                    <li key={answer}>
+                    <li key={index}>
                         <h3>{index + 1}</h3>
                         <p className='question'>{questions[index].text}</p>
                         <p className={cssClass}>{answer ?? 'Skipped'}</p>
